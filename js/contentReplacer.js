@@ -3,6 +3,7 @@ function loadContent(page) {
         "home": "components/main.html",
         "workflow": "components/workflow.html",
         "contact": "components/contact.html"
+        "about": "components/about.html"
     };
 
     let pageUrl = pageMap[page] || "components/404.html"; // Default to 404 if not found
