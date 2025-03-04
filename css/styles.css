@@ -33,3 +33,17 @@ footer {
     background: #222;
     color: white;
 }
+
+#workflow-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#workflow-steps button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
