@@ -1,14 +1,15 @@
 function loadContent(page) {
     let pageMap = {
         "home": "components/main.html",
-        "about": "components/about.html",
+        "workflow": "components/workflow.html",
         "contact": "components/contact.html"
     };
 
-    let pageUrl = pageMap[page] || "components/404.html"; // Default to 404 if not in map
+    let pageUrl = pageMap[page] || "components/404.html"; // Default to 404 if not found
 
     loadComponent(pageUrl, "main-content");
 }
+
 
 function loadComponent(url, targetId) {
     fetch(url)
