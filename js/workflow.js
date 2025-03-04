@@ -1,8 +1,20 @@
 function nextStep(choice) {
     let workflowContainer = document.getElementById("workflow-steps");
+    let summaryList = document.getElementById("summary-list");
 
-    if (!workflowContainer) return;
+    if (!workflowContainer || !summaryList) return;
 
+    // Retrieve previous selections (or start fresh)
+    let selections = JSON.parse(sessionStorage.getItem("userSelections")) || [];
+
+    // Add the new selection
+    selections.push(choice);
+    sessionStorage.setItem("userSelections", JSON.stringify(selections));
+
+    // Update the summary list
+    summaryList.innerHTML = selections.map(item => `<li>${item}</li>`).join("");
+
+    // Define next steps based on user choice
     let stepHTML = "";
 
     switch (choice) {
@@ -43,5 +55,6 @@ function nextStep(choice) {
             stepHTML = `<h2>Invalid selection. Please go back.</h2>`;
     }
 
+    // Update workflow container
     workflowContainer.innerHTML = stepHTML;
 }
