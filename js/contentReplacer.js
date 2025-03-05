@@ -2,7 +2,7 @@ function loadContent(page) {
     let pageMap = {
         "home": "components/main.html",
         "workflow": "components/workflow.html",
-        "contact": "components/contact.html"
+        "contact": "components/contact.html",
         "about": "components/about.html"
     };
 
